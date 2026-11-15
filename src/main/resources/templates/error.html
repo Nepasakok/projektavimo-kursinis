@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="lt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Klaida</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1>Klaida</h1>
+<p class="error" th:text="${message}">Klaidos pranešimas</p>
+<p><a th:href="@{/}">← Grįžti į klientų sąrašą</a></p>
+</body>
+</html>

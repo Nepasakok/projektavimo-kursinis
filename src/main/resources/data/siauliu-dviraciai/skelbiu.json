@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Trek Marlin 7 29\" M",
+    "description": "Kalnų dviratis, diskiniai stabdžiai, 21 pavarų, aliuminis rėmas. Geros būklės.",
+    "price": 450,
+    "city": "Šiauliai",
+    "photoHash": "hash-trek-marlin-7",
+    "url": "https://www.skelbiu.lt/skelbimai/trek-marlin-7"
+  },
+  {
+    "title": "Kross Level 3 27,5\" S",
+    "description": "Kalnų dviratis, hidrauliniai diskiniai stabdžiai, 24 pavarų, aliuminis rėmas.",
+    "price": 380,
+    "city": "Šiauliai",
+    "photoHash": "hash-kross-level-3",
+    "url": "https://www.skelbiu.lt/skelbimai/kross-level-3"
+  },
+  {
+    "title": "Specialized Rockhopper 29\" L",
+    "description": "Kalnų dviratis, diskiniai stabdžiai, 27 pavarų, aliuminis rėmas.",
+    "price": 620,
+    "city": "Šiauliai",
+    "photoHash": "hash-specialized-rockhopper",
+    "url": "https://www.skelbiu.lt/skelbimai/specialized-rockhopper"
+  }
+]

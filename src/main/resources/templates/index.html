@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="lt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoDviratis</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1>AutoDviratis</h1>
+<p>Pasirinkite klientą:</p>
+<ul>
+    <li th:each="tenant : ${tenants}">
+        <a th:href="@{/t/{id}/listings(id=${tenant.id})}" th:text="${tenant.name}">Klientas</a>
+    </li>
+</ul>
+</body>
+</html>

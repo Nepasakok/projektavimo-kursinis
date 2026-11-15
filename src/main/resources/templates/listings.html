@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="lt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${tenant.name} + ' – skelbimai'">Skelbimai</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<p><a th:href="@{/}">← Visi klientai</a></p>
+<h1 th:text="${tenant.name}">Klientas</h1>
+
+<form method="post" th:action="@{/t/{id}/refresh(id=${tenant.id})}">
+    <button type="submit">Atnaujinti skelbimus</button>
+</form>
+
+<p class="error" th:if="${errorMessage}" th:text="${errorMessage}">Klaida</p>
+
+<h2>Šaltiniai</h2>
+<ul class="sources">
+    <li th:each="source : ${sources}">
+        <strong class="warning" th:if="${source.unavailable()}" th:text="${source.message()}">Nepasiekiamas</strong>
+        <span th:unless="${source.unavailable()}" th:text="${source.message()}">Atnaujinta</span>
+        <span class="muted" th:unless="${source.enabled()}">[išjungtas – demo]</span>
+        <form class="inline" method="post"
+              th:action="@{/t/{id}/sources/{name}/toggle(id=${tenant.id},name=${source.name()})}">
+            <button type="submit" th:text="${source.enabled()} ? 'Išjungti (demo)' : 'Įjungti'">Išjungti</button>
+        </form>
+    </li>
+</ul>
+
+<h2>Filtras</h2>
+<p class="warning" th:each="field : ${warnings}" th:text="${field} + ': neteisinga reikšmė, filtras ignoruojamas'"></p>
+<form class="filter" method="get" th:action="@{/t/{id}/listings(id=${tenant.id})}">
+    <label>Tipas
+        <select name="type">
+            <option value="">Visi</option>
+            <option th:each="option : ${typeOptions}" th:value="${option.value()}" th:text="${option.label()}"
+                    th:selected="${option.value() == filterForm.type}">Kalnų
+            </option>
+        </select>
+    </label>
+    <label>Ratai (coliai)
+        <input type="text" name="wheelSize" th:value="${filterForm.wheelSize}">
+    </label>
+    <label>Kaina nuo (€)
+        <input type="text" name="minPrice" th:value="${filterForm.minPrice}">
+    </label>
+    <label>Kaina iki (€)
+        <input type="text" name="maxPrice" th:value="${filterForm.maxPrice}">
+    </label>
+    <label>Miestas
+        <input type="text" name="city" th:value="${filterForm.city}">
+    </label>
+    <label>
+        <input type="checkbox" name="includeUnspecified" value="true" th:checked="${filterForm.includeUnspecified}">
+        Įtraukti skelbimus su nenurodytomis reikšmėmis
+    </label>
+    <label>Rūšiavimas
+        <select name="sort">
+            <option value="">Pagal numatytąją tvarką</option>
+            <option value="PRICE_ASC" th:selected="${filterForm.sort == 'PRICE_ASC'}">Kaina: didėjančia</option>
+            <option value="PRICE_DESC" th:selected="${filterForm.sort == 'PRICE_DESC'}">Kaina: mažėjančia</option>
+        </select>
+    </label>
+    <button type="submit">Filtruoti</button>
+    <a th:href="@{/t/{id}/listings(id=${tenant.id})}">Išvalyti</a>
+</form>
+
+<h2>Skelbimai</h2>
+<p th:if="${#lists.isEmpty(rows) and errorMessage == null}">Skelbimų nerasta</p>
+
+<table th:unless="${#lists.isEmpty(rows)}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Pavadinimas</th>
+        <th>Kaina</th>
+        <th>Miestas</th>
+        <th>Tipas</th>
+        <th>Ratai</th>
+        <th>Rėmo dydis</th>
+        <th>Stabdžiai</th>
+        <th>Pavaros</th>
+        <th>Medžiaga</th>
+        <th>Šaltiniai</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${rows}">
+        <td th:text="${row.id()}">1</td>
+        <td th:text="${row.title()}">Pavadinimas</td>
+        <td th:text="${row.price()}">450 €</td>
+        <td th:text="${row.city()}">Šiauliai</td>
+        <td th:text="${row.type()}">kalnų</td>
+        <td th:text="${row.wheelSize()}">29"</td>
+        <td th:text="${row.frameSize()}">M</td>
+        <td th:text="${row.brakeType()}">diskiniai</td>
+        <td th:text="${row.gears()}">21</td>
+        <td th:text="${row.frameMaterial()}">aliuminis</td>
+        <td>
+            <div th:each="link : ${row.links()}">
+                <a th:href="${link.url}" th:text="${link.sourceName}" target="_blank" rel="noopener">Šaltinis</a>
+            </div>
+        </td>
+        <td>
+            <form method="post"
+                  th:action="@{/t/{id}/listings/{listingId}/hide(id=${tenant.id},listingId=${row.id()})}">
+                <button type="submit">Paslėpti (iki kito atnaujinimo)</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Trek Marlin 7 29\" dydis M",
+    "description": "Kalnų dviratis, geros būklės, galima derėtis.",
+    "price": 440,
+    "city": "Šiauliai",
+    "photoHash": "hash-trek-marlin-7",
+    "url": "https://www.facebook.com/marketplace/item/trek-marlin-7"
+  },
+  {
+    "title": "Dviračio padangos 29\"",
+    "description": "Dvi naujos padangos kalnų dviračiui.",
+    "price": 25,
+    "city": "Šiauliai",
+    "photoHash": "hash-padangos-29",
+    "url": "https://www.facebook.com/marketplace/item/padangos-29"
+  },
+  {
+    "title": "Giant Talon 29\"",
+    "description": "Kalnų dviratis. Ratai 27,5\", diskiniai stabdžiai, 21 pavarų.",
+    "price": 500,
+    "city": "Šiauliai",
+    "photoHash": "hash-giant-talon",
+    "url": "https://www.facebook.com/marketplace/item/giant-talon"
+  }
+]

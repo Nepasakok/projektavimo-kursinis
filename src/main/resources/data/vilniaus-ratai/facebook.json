@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Giant Defy Advanced 28\" S",
+    "description": "Plento dviratis, karboninis rėmas, 22 pavarų, diskiniai stabdžiai.",
+    "price": 1800,
+    "city": "Vilnius",
+    "photoHash": "hash-giant-defy",
+    "url": "https://www.facebook.com/marketplace/item/giant-defy"
+  },
+  {
+    "title": "Cube Aim 29\" M",
+    "description": "Kalnų dviratis, diskiniai stabdžiai, 24 pavarų, aliuminis rėmas.",
+    "price": 540,
+    "city": "Vilnius",
+    "photoHash": "hash-cube-aim",
+    "url": "https://www.facebook.com/marketplace/item/cube-aim"
+  },
+  {
+    "title": "Miesto dviratis Pelago 28\"",
+    "description": "Miesto dviratis, 7 pavarų, plieninis rėmas, krepšys priekyje.",
+    "price": 210,
+    "city": "Vilnius",
+    "photoHash": "hash-pelago",
+    "url": "https://www.facebook.com/marketplace/item/pelago"
+  }
+]

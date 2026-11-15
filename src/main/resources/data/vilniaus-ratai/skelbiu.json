@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Cannondale Trail 5 29\" L",
+    "description": "Kalnų dviratis, hidrauliniai diskiniai stabdžiai, 18 pavarų, aliuminis rėmas.",
+    "price": 720,
+    "city": "Vilnius",
+    "photoHash": "hash-cannondale-trail-5",
+    "url": "https://www.skelbiu.lt/skelbimai/cannondale-trail-5"
+  },
+  {
+    "title": "Merida Scultura 400 28\" rėmas 54 cm",
+    "description": "Plento dviratis, karboninis rėmas, 22 pavarų.",
+    "price": 1450,
+    "city": "Vilnius",
+    "photoHash": "hash-merida-scultura",
+    "url": "https://www.skelbiu.lt/skelbimai/merida-scultura"
+  },
+  {
+    "title": "Kellys Spider 27,5\" M",
+    "description": "Kalnų dviratis, V-brake stabdžiai, 21 pavarų, plieninis rėmas.",
+    "price": 260,
+    "city": "Vilnius",
+    "photoHash": "hash-kellys-spider",
+    "url": "https://www.skelbiu.lt/skelbimai/kellys-spider"
+  }
+]
